@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+
+<!--<Bundle xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://hl7.org/fhir"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://hl7.org/fhir file:../schema/fhir/bundle.xsd">-->
+  <!--1#- ระบุเอกสาร 70 ตัวอักษร-->
+  <!-- Requires-->
+  
+  
+  <!--1#- ระบุเอกสาร 70 ตัวอักษร-->
+  <!-- Requires-->
+  <id value="Request-for-permission-to-operate-a-medical-facility-clinic"/>
+  
+  <!--2#- ระบุ OID ของ สพธอ.-->
+  <!-- Requires-->
+  <identifier>
+    <system value="https://oid.estandard.or.th"/>
+    <value value="2.16.764.1.4.100.16.5.1.1"/>
+  </identifier>
+  
+  <!--3#- ระบุประเภท document -->
+  <!-- Requires-->
+  <type value="document"/>
+  
+  <!--4#- วันที่สร้างเอกสาร -->
+  <!--Requires : dbl-10: A document must have a date [(type='document') implies (timestamp.hasValue())] -->
+  <timestamp value="2013-05-28T22:12:21Z"/>
+  
+  <!--5# ข้อมูลที่เกี่ยวข้องกับเอกสาร -->
+  <!-- Requires : Bundle entry missing a fullURL-->
+  <entry>
+    <!--5.1# URL ระบุทรัพยากรไฟล์เอกสารบน Server-->
+    <!--Requires : Bundle entry missing a fullURL -->
+    <fullUrl value="https://schemas.teda.th/Composition/1"/>
+    
+    <!--5.2. ระบุทรัพยากรที่เกี่ยวข้องกับเอกสาร  -->
+    <resource>
+      <!--5.2.1 รายละเอียดของเอกสาร-->
+      <!--Requires : dbl-11 A document must have a Composition as the first resource type = 'document' implies entry.first().resource.is(Composition)-->
+      <Composition>
+        <!--5.2.1.1# ส่วนที่ระบุรายละเอียดของเอกสาร -->
+        <!--Requires : Resource Requires an id-->
+        <id value="1"/>
+        
+        <!--5.2.1.2# VersionNumber เพิ่ม/แก้ไข-->
+        <extension
+          url="http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber">
+          <!--Example Element: extension : http://hl7.org/fhir/extension-composition-clinicaldocument-versionnumber.html-->
+          <!-- ?? 1..1 Value of extension versionNumber: Version specific identifier for the composition, assigned when each version is created/updated-->
+          <valueString value="1.0.0"/>
+        </extension>
+        
+        <!--5.2.1.3 ข้อมูลเลขที่หนังสือรับรอง -->
+        <identifier id="เลขที่ใบอนุญาตที่ฉบับปัจจุบัน"/>
+        
+        <!--5.2.1.4# สถานะของเอกสาร-->
+        <!-- Requires-->
+        <status value="final"/>
+        
+        <!--5.2.1.5# รหัสประเภทเอกสาร:http://loinc.org -->
+        <!--https://www.hl7.org/fhir/valueset-doc-typecodes.html-->
+        <!-- Requires-->
+        <type>
+          <text value="ส.พ.7"/>
+        </type>
+        
+        <!--5.2.1.6# ขอใบอนุญาตให้ประกอบกิจการสถานพยาบาล-->
+        <!-- Requires-->
+        <subject>
+          <reference value="https://schemas.teda.th/practitionerrole/pr1"/>
+        </subject>
+        
+        <!--5.2.1.7# วันที่ออกเอกสาร-->
+        <!-- Requires-->
+        <date value="2013-02-01T12:30:02Z"/>
+        
+        <!--5.2.1.8# ผู้อนุญาตข้อมูล-->
+        <!-- Requires-->
+        <author>
+          <reference value="Practitioner/p2"/>
+        </author>       
+        
+        <!--5.2.1.9# ชื่อเอกสาร-->
+        <!-- Requires-->
+        <title value="ขอใบอนุญาตให้ประกอบกิจการสถานพยาบาล (คลินิก)"/>       
+        <relatesTo>
+          <!-- ความสัมพันธ์กับใบอนุญาตเดิม -->
+          <code id="new" value="signs"></code>
+          <!-- เลขที่ใบอนุญาติเดิมที่อ้างอิงถึง -->
+          <targetIdentifier id="ทส.123456"/>
+        </relatesTo>
+      </Composition>
+    </resource>
+  </entry>
+  
+  <!-- 6# ข้อมูลเกี่ยวกับขอใบอนุญาตให้ประกอบกิจการสถานพยาบาล -->
+  <entry>
+    <fullUrl value="https://schemas.teda.th/practitionerrole/pr1"/>
+    <resource>
+      <PractitionerRole>
+        <!--6.1 ส่วนที่ระบุรายการของเอกสาร -->
+        <!-- Requires-->
+        <id value="pr1"/>
+        
+        <!--6.2 ใบอนุญาตฉบับนี้ใช้ได้จนถึงวันที่-->
+        <!-- 0..1 Period The period during which the practitioner is authorized to perform in these role(s) -->
+        <period> 
+          <!--6.2.5 วันเดือนปีที่ออกหนังสือรับรอง-->
+          <start value="2020-06-10"/>
+          <!--6.2.6 วันเดือนปีที่หนังสือรับรองหมดอายุ-->
+          <end value="2021-06-10"/>
+        </period>
+        
+        <!-- 6.3 ข้อมูลแพทย์ทีดูแลสถานพยาบาล-->
+        <practitioner>
+          <reference value="https://schemas.teda.th/Practitioner/p1"/>      
+        </practitioner>
+        
+        <!-- 6.4 ข้อมูลสถานพยาบาล --> 
+        <healthcareService>
+          <reference value="https://schemas.teda.th/healthcareservice/h1"/>
+        </healthcareService>
+        
+        <!-- 6.5 วัน/เวลาทำการ --> 
+        <!-- 0..* Times the Service Site is available -->
+        <availableTime>
+          <modifierExtension url="https://schemas.teda.th/availableTime/at1">
+            <valueString value="พุธ 09:30 - 19:00, ศุกร์ 09:30 - 19:00"/>
+          </modifierExtension>
+        </availableTime>
+        
+      </PractitionerRole>
+    </resource>
+  </entry>
+  
+  <!--7. ข้อมูลแพทย์ทีดูแลสถานพยาบาล -->
+  <entry> 
+    <!--7.1 URL ระบุทรัพยากรไฟล์เอกสาร -->
+    <fullUrl value="https://schemas.teda.th/Practitioner/p1"/> 
+    <resource> 
+      <Practitioner> 
+        <!--7.2.1.1 ระบุทรัพยากรที่เกี่ยวข้องกับแพทย์ผู้ขอใบประกอบโรคศิลป์ -->
+        <!-- Requires-->
+        <id value="p1"/>    
+        
+        <!--7.2.1.2 ชื่อ-นามสกุลแพทย์ -->
+        <!-- Requires-->
+        <name> 
+          <text value="[ระบุชื่อ-นามสกุลแพทย์]"/> 
+        </name>
+        <!--7.2.1.3 เลขที่ใบอนุญาตประกอบวิชาชีพ-->
+        <qualification> 
+          <!--7.2.1.3.1 ระบุสาขาวิชาชีพการประกอบโรคศิลป์ เช่น-->
+          <identifier id="เลขที่ใบประกอบวิชาชีพ">   
+            <!--7.2.1.3.1.1 ระบุสาขาวิชาชีพการประกอบโรคศิลป์ เช่น-->
+            <value value="เวชกรรม"/>
+          </identifier>
+          
+          <code>
+            <!-- 7.2.1.3.2 รหัส Degree/License/Certificate-->
+            <!--https://www.hl7.org/fhir/v2/0360/2.7/index.html-->            
+            <text value="CER"/>
+          </code>          
+          
+          <!--7.2.1.3.3 วันเดือนปีที่ออกใบอนุญาต-->
+          <period>
+            <!--7.2.1.3.3.1 วันเดือนปีที่ออกใบอนุญาต-->
+            <start value="2020-06-16"/>
+            
+          </period>
+        </qualification> 
+        
+      </Practitioner> 
+    </resource> 
+  </entry> 
+  
+  <!-- 8. ข้อมูลบริการ -->
+  <entry>
+    <fullUrl value="https://schemas.teda.th/healthcareservice/h1"/>
+    <resource>
+      <HealthcareService>
+        <!--8.2.1.1 ส่วนที่ระบุรายการของเอกสาร -->
+        <!-- Requires-->
+        
+        <id value="h1"/>
+        <!--8.2.1.2 หน่วยงานที่ให้บริการ -->
+        <!-- Organization that provides this service -->
+        <providedBy>
+          <reference value="https://schemas.teda.th/Organization/o1"/>
+        </providedBy>
+        <!--8.2.1.3 ประเภทของบริการ -->
+        <!--Type of service that may be delivered or performed-->        
+        <type>
+          <text value="ไม่รับผู้ป่วยไว้ค้างคืน"/>
+        </type> 
+        <!--8.2.1.4 จำนวนเตียง-->
+        <specialty>
+          <text value="51 เตียง"/>
+        </specialty>
+        <!--8.2.1.5 ลักษณะสถานพยาบาล-->
+        <comment value="คลินิคทั่วไป"/>        
+        
+        <eligibility>
+          <comment value="บริการที่จัดให้มีเพิ่มเติม , และอื่นๆ"></comment>
+        </eligibility>
+      </HealthcareService>
+    </resource>
+  </entry>
+  
+  <!--9. หน่วยงานที่ให้บริการ-->
+  <entry>
+    <fullUrl value="https://schemas.teda.th/Organization/o1"/>
+    <resource>
+      <Organization>
+        <!--9.2.1.1 ส่วนที่ระบุรายละเอียดของสถานพยาบาล-->
+        <id value="o1"/>        
+        <!--9.2.1.2 ชื่อสถานประกอบการที่ได้รับอนุญาต-->
+        <name value="ชื่อสถานพยาบาล"/>                         
+        <!--9.2.1.3 สถานประกอบการที่ได้รับอนุญาต-->
+        <address>
+          <!--9.2.1.3.1 กรณีที่ตั้ง-สถานประกอบการ Unstructure-->
+          <text value="[ระบุที่ตั้งสถานประกอบการแบบ Unstructure]"></text>
+          <!--9.2.1.3.2 เลขที่-->
+          <line id="No." value="เลขที่อยู่"></line>
+          <!--9.2.1.3.2 เลขที่ หมู่-->
+          <line id="Moo" value="หมู่"></line>
+          <!--9.2.1.3.2 เลขที่ ซอย-->
+          <line id="Soi" value="ซอย"></line>
+          <!--9.2.1.3.2  ถนน-->
+          <line id="Street" value="ถนน"></line>
+          <!--9.2.1.3.3 ตำบล-->
+          <city value="100101"/>
+          <!--9.2.1.3.4 อำเภอ-->
+          <district value="1001"/>
+          <!--9.2.1.3.5 จังหวัด-->
+          <state value="10"/>
+          <!--9.2.1.3.6 รหัสไปรษณีย์-->
+          <postalCode value="12000"/>
+          <!--9.2.1.3.7 รหัสประเทศ-->
+          <country value="TH"/>
+        </address>
+        <!--9.2.1.4 ข้อมูลช่องทางติดต่อ-->
+        <contact>        
+          <!--9.2.1.4.1 รายละเอียดช่องทางการติดต่อ-->
+          <!--เบอร์โทร-->
+          <telecom>
+            <system value="phone"/>
+            <value value="05 600 0111"/>
+            <use value="work"/>                      
+          </telecom>
+          <!--เบอร์ fax-->
+          <telecom>
+            <system value="fax"/>
+            <value value="05 622 5505"/>
+            <use value="work"/>                      
+          </telecom>
+          <!--email-->
+          <telecom>
+            <system value="email"/>
+            <value value="mail:to"/>
+            <use value="work"/>                      
+          </telecom>
+          
+        </contact>
+      </Organization>
+    </resource>
+  </entry>
+  
+  
+  <!--10 ข้อมูลผู้รับผิดชอบเอกสาร-->
+  <entry>
+    <fullUrl value="https://schemas.teda.th/Practitioner/p2"/>
+    <resource>
+      <Practitioner>
+        <!-- 10.2.1.1 ส่วนที่ระบุรายละเอียดของผู้รับรองเอกสาร-->
+        <id value="p2"/>
+        <!-- 10.2.1.2 ชื่อผู้รับรองข้อมูล-->
+        <name>
+          <text value="ระบุชื่อ-นามสกุลลผู้รับรองข้อมูล"/>
+        </name>
+      </Practitioner>
+    </resource>
+  </entry>
+  
+  <!--11. ลายเซ็นรับรองเอกสาร-->
+  <signature>
+    <type>
+      <system value="urn:iso-astm:E1762-95:2013"/>  
+      <!--Author's Signature--> 
+      <code value="1.2.840.10065.1.12.1.2"/>   
+    </type>
+    <when value="2015-08-31T07:42:33+10:00"/>
+    <who>
+      <display value="หน่วยงานที่รับรองเอกสาร"/>
+    </who>
+    <!--    a real document would typically have an digital signature, but
+      the publishing tools are not yet setup to produce a valid digital
+      signature. For now, an image of a signature    -->
+    <!--<data value=""/>-->
+    <data value="MTIzNA=="/>
+  </signature>
+</Bundle>

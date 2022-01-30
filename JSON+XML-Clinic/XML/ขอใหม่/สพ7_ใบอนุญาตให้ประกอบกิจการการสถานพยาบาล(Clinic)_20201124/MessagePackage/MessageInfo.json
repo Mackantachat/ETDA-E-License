@@ -1,0 +1,13 @@
+{
+    "standardName": "Medical-Facility-Performance-License",
+    "standardCode": "",
+    "version": "1.0.0",
+    "messages" : [
+        {
+            "rootTagName": "Medical-Facility-Performance-License",
+            "versionPath": "/Bundle/entry/resource/Composition/extension/valueString/@value",
+            "schemaFilePath": "/schema/fhir/bundle.xsd",
+            "schematronFilePath": "/schema/fhir/bundle.sch"
+        }
+    ]
+}
