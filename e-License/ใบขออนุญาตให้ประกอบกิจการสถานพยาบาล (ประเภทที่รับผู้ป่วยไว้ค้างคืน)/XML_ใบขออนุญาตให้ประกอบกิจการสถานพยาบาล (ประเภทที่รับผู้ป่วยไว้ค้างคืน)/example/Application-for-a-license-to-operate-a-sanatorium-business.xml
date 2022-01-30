@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns="http://hl7.org/fhir"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://hl7.org/fhir file:../schema/fhir/bundle.xsd">
+    <!--1 กำหนดภาษาที่ใช้ของเอกสารอิเล็กทรอนิกส์-->
+    <language value="TH"/>   
+    <!--2.กำหนดประเภทเอกสาร-->
+    <type value="document"/>
+    
+    <entry>
+        <resource>
+             <DocumentReference>
+                 <!--3.1.1 หมายเลข OID ของ สพธอ.-->
+                 <extension url="https://oid.estandard.or.th">
+                     <valueOid id="2.16.764.1.4.100.16.5.1.1"/>             
+                 </extension>
+                 <!--3.1.2 เวอร์ชั่นเอกสาร-->
+                 <extension url="VersionNumber">             
+                     <valueString value="1.0"/>
+                 </extension> 
+                 <!--3.2 ข้อมูลเลขที่ใบอนุญาตประกอบกิจการ -->
+                 <identifier id="เลขที่ใบอนุญาต"/>
+                 <!--3.3 สถานะของเอกสาร-->
+                 <status value="current"/>
+                 <!--รหัสเอกสาร-->
+                 <type>
+                     <coding>
+                         <code value="ส.พ.7"/>
+                     </coding>
+                 </type>
+                 <!--3.4 ให้ไว้แก่-->
+                 <subject>
+                     <display value="ชื่อผู้ดำเนินการสถานพยาบาล"/> 
+                 </subject>                     
+                 <!--3.5 วันที่สร้างเอกสาร-->
+                 <date value="2013-07-01T23:11:33+10:00"/> 
+                 
+                 <author>
+                     <!--3.6.1 ข้อมูลใบอนุญาตประกอบวิชาชีพ-->
+                     <!--3.6.1.1 ข้อมูลผู้ดำเนินการ -->
+                     <practitioner>
+                        
+                         <qualification>  
+                             <!--3.6.1.1.2.1 เลขที่ใบอนุญาตประกอบวิชาชีพ-->
+                             <identifier id="เลขที่ใบประกอบวิชาชีพ">   
+                                 <!--3.6.1.1.2.1.1 ระบุวิชาชีพ เช่น-->
+                                 <value value="เวชกรรม"/>
+                             </identifier>
+                             <period>
+                                 <!--3.6.1.1.2.2.1 วันที่ออกใบอนุญาต-->
+                                 <start value="2020-06-16"/>
+                             </period>
+                         </qualification>
+                     </practitioner>
+                     
+                     <!--3.6.1.2 ข้อมูลสถานประกอบการ -->
+                     <organization>
+                         <!--3.6.1.2.1 ประเภทสถานประกอบการ-->
+                         <!--http://terminology.hl7.org/CodeSystem/organization-type-->
+                         <type>  
+                             <text value="ประเภทสถานประกอบการ">
+                                 <extension url="จำนวนเตียง">
+                                     <valueQuantity id="100"/>                                
+                                 </extension>
+                                 <extension url="ประเภทของสถานพยาบาล">
+                                     <valueString value="ประเภทรับไว้ค้างคืน"/>
+                                 </extension>
+                                 <extension url="ลักษณะของสถานพยาบาล">
+                                     <valueString value="สหคลินิก(เวชกรรม+การแพทย์แผนไทย)"/>
+                                 </extension>
+                             </text>
+                         </type>
+                         
+                         <!--3.6.1.2.2 ชื่อสถานประกอบการ-->
+                         <name value="ชื่อสถานพยาบาล"/>
+                         
+                         <!--3.6.1.2.4 ที่ตั้งสถานประกอบการ-->
+                         <address>
+                             <!--3.6.3.4.1 กรณีที่ตั้ง-สถานประกอบการ Unstructure-->
+                             <text></text>
+                             <!--3.6.3.4.2 เลขที่-->
+                             <line id="No"></line>
+                             <line id="Moo"></line>
+                             <line id="Soi"></line>
+                             <line id="Street"></line>
+                             <!--3.6.3.4.3 ตำบล-->
+                             <city value="100101"/>
+                             <!--3.6.3.4.4 อำเภอ-->
+                             <district value="1001"/>
+                             <!--3.6.3.4.5 จังหวัด-->
+                             <state value="10"/>
+                             <postalCode value="12000"/>
+                             <country value="TH"/>
+                         </address>
+                     </organization>
+                     <!-- บริการที่จัดให้มีเพิ่มเติม -->
+                     <healthcareService>
+                         <display value="บริการที่จัดให้มีเพิ่มเติม"/>
+                     </healthcareService>
+                     <!-- เบอร์ติดต่อ -->
+                     <telecom>
+                         <system value="phone"/>
+                         <value value="05 600 0111"/>
+                         <use value="work"/>                      
+                     </telecom>
+                     <!--3.6.1.2.3 เบอร์ fax-->
+                     <telecom>
+                         <system value="fax"/>
+                         <value value="05 622 5505"/>
+                         <use value="work"/>                      
+                     </telecom>
+                     <!--3.6.1.2.3 email-->
+                     <telecom>
+                         <system value="email"/>
+                         <value value="mail:to"/>
+                         <use value="work"/>                      
+                     </telecom>
+                     <!-- วันและเวลาทำการ -->
+                     <availableTime>
+                         <!-- วันที่เปิดทำการ (ทุกวัน = true , ไม่ทุกวัน = false) -->
+                         <allDay value="true"/>
+                         <!-- เวลาเริ่มทำการ -->
+                         <availableStartTime value="09:00:00"/>
+                         <!-- เวลาปิดทำการ -->
+                         <availableEndTime value="19:00:00" />
+                     </availableTime>
+                 </author>
+                 <!-- เลขที่ใบอนุญาตเดิม -->
+                 <relatesTo> 
+                     <!-- ประเภทของความสัมพันธ์ที่เอกสารนี้มีกับใบอนุญาตเดิม -->
+                     <code></code>
+                     <target>
+                         <!-- ใบอนุญาตเดิมเลขที่ -->
+                         <display></display>
+                     </target>
+                 </relatesTo>
+                 
+                 
+                 <!--3.7 วันเดือนปีที่ออกเอกสาร มีผลการใช้งานเอกสาร-->
+                 <context>
+                     <period>
+                         <start value="2020-06-10"/>
+                         <!--3.7.1.2 วันเดือนปีที่ใบอนุญาตหมดอายุ-->
+                         <end value="2021-06-10"/>
+                     </period>
+                 </context>
+             </DocumentReference>            
+        </resource>
+    </entry>
+    <signature>
+        <!--(4.1) วันที่เซ็นเอกสาร -->  
+        <when value="2020-05-05T13:28:17-05:00"/>
+        <!--(4.2) ชื่อ-นามสกุลผู้อนุมัติ --> 
+        <who>
+            <display value="ชื่อ-นามสกุลผู้อนุมัติ"/>
+        </who>
+        <!--(4.3) ประเภทรูปแบบการเซ็นเอกสารอิเล็กทรอนิกส์ --> 
+        <sigFormat value="application/signature+xml"/>
+        <!--(4.4) ข้อมูลลายเซ็น --> 
+        <data value="0000"/>
+    </signature>
+</Bundle>

@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns="http://hl7.org/fhir"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://hl7.org/fhir file:../schema/fhir/bundle.xsd">
+    <!-- 1 กำหนดภาษาที่ใช้ของเอกสารอิเล็กทรอนิกส์ -->
+    <language value="TH"/>   
+    <!-- 2.กำหนดประเภทเอกสาร -->
+    <type value="document"/>
+    <entry>
+        <resource>
+            <QuestionnaireResponse>
+                <!-- 3.หมายเลข OID ของเอกสาร -->
+                <extension url="https://oid.estandard.or.th">                
+                    <valueOid id="2.16.764.1.4.100.9.2.1.1"/>             
+                </extension>
+                <!-- 3.เวอร์ชันของเอกสาร -->
+                <extension url="VersionNumber">             
+                    <valueString value="1.0.0"/>
+                </extension>  
+                <!-- 3.สถานะของเอกสาร -->
+                <status value="completed"></status>
+                <!-- 4 หัวเรื่องเอกสาร -->
+                <subject>
+                    <display value="แผนงานการจัดตั้งสถานพยาบาลประเภทที่รับผู้ป่วยไว้ค้างคืน" />
+                </subject>
+                <!-- 5 ชื่อนามสกุลผู้ขออนุญาต -->
+                <author>
+                    <display value="ชื่อนามสกุลผู้ขออนุญาต"/>
+                </author>
+                
+                <!-- 6 รายละเอียดของสถานพยาบาล -->
+                <!-- 6.1 ประเภทของสถานพยาบาล -->
+                <item>
+                    <linkId id="1"></linkId>
+                    <text value="สถานพยาบาลมีลักษณะเป็น" />
+                    <answer>
+                        <valueString value="โรงพยาบาลทั่วไป"/>
+                    </answer>
+                    <answer>
+                        <valueString value="ขนาดเล็ก"/> <!-- ขนาดเล็ก, ขนาดกลาง, ขนาดใหญ่ -->
+                    </answer>
+                </item>
+                <!-- 6.2 จำนวนเตียง -->
+                <item>
+                    <linkId id="2"></linkId>
+                    <text value="จำนวนเตียง" />
+                    <answer>
+                        <valueInteger value="100"/> <!-- จำนวนเตียง -->
+                    </answer>
+                </item>
+                <!-- 6.3 บริการที่จัดให้มีเพิ่มเติม -->
+                <item>
+                    <linkId id="3"></linkId>
+                    <text value="บริการที่จัดให้มีเพิ่มเติม" />
+                    <answer>
+                        <valueString value="รายละเอียดบริการ"/>
+                    </answer>
+                </item>
+                <!-- 6.4 ลักษณะอาคารสถานพยาบาล -->
+                <item>
+                    <linkId id="4"></linkId>
+                    <text value="ลักษณะอาคารสถานพยาบาล" />
+                    <answer>
+                        <valueString value="เป็นอาคารสถานพยาบาลสร้างใหม่"/> <!-- เป็นอาคารสถานพยาบาลสร้างใหม่, เป็นอาคารดัดแปลงจากอาคารเดิม, อื่นๆ -->
+                    </answer>
+                    <answer>
+                        <valueString value="อธิบายเพิ่มเติมกรณีเลือกอื่นๆ"/>
+                    </answer>
+                </item>
+                <!-- 6.5 การเงินโดยประมาณ -->
+                <item>
+                    <linkId id="5"></linkId>
+                    <text value="งบลงทุน" />
+                    <answer>
+                        <valueDecimal value="12345678.12" />
+                    </answer>
+                    <!-- 6.5.1 แหล่งเงินทุนจาก -->
+                    <item>
+                        <linkId id="5.1"></linkId>
+                        <text value="แหล่งเงินทุนจาก" />
+                        <!-- 6.5.1.1 ส่วนตัว -->
+                        <item>
+                            <linkId id="5.1.1"></linkId>
+                            <text value="ส่วนตัว" />
+                            <answer>
+                                <valueDecimal value="12345678.12" />
+                            </answer>
+                        </item>
+                        <!-- 6.5.1.2 สถาบันการเงินภายในประเทศ -->
+                        <item>
+                            <linkId id="5.1.2"></linkId>
+                            <text value="สถาบันการเงินภายในประเทศ" />
+                            <answer>
+                                <valueDecimal value="12345678.12" />
+                            </answer>
+                        </item>
+                        <!-- 6.5.1.3 สถาบันการเงินต่างประเทศ -->
+                        <item>
+                            <linkId id="5.1.3"></linkId>
+                            <text value="สถาบันการเงินต่างประเทศ" />
+                            <answer>
+                                <valueDecimal value="12345678.12" />
+                            </answer>
+                        </item>
+                        <!-- 6.5.1.4 หุ้น -->
+                        <item>
+                            <linkId id="5.1.4"></linkId>
+                            <text value="หุ้น" />
+                            <answer>
+                                <valueDecimal value="12345678.12" />
+                            </answer>
+                        </item>
+                    </item>
+                </item>
+                <!-- 6.6 พื้นที่บริการครอบคลุม -->
+                <item>
+                    <linkId id="6"></linkId>
+                    <text value="พื้นที่บริการครอบคลุม" />
+                    <!-- 6.6.1 ในเขตท้องที่การปกครองของกระทรวงมหาดไทย (อำเภอ/เขต จังหวัด) -->
+                    <item>
+                        <linkId id="6.1"></linkId>
+                        <text value="ในเขตท้องที่การปกครองของกระทรวงมหาดไทย (อำเภอ/เขต จังหวัด)" />
+                        <answer>
+                            <valueString value="เขตคลองเตย กรุงเทพมหานคร"/>
+                        </answer>
+                    </item>
+                    <!-- 6.6.2 จำนวนประชากรภายในเขตรัศมี 5 กิโลเมตร โดยรอบสถานพยาบาล -->
+                    <item>
+                        <linkId id="6.2"></linkId>
+                        <text value="จำนวนประชากรภายในเขตรัศมี 5 กิโลเมตร โดยรอบสถานพยาบาล" />
+                        <answer>
+                            <valueInteger value="2500"/>
+                        </answer>
+                    </item>
+                </item>
+                <!-- 6.7 สถานพยาบาลของรัฐและเอกชนในพื้นที่บริการ -->
+                <item>
+                    <linkId id="7"></linkId>
+                    <text value="สถานพยาบาลของรัฐและเอกชนในพื้นที่บริการ" />
+                    <!-- 6.7.1 สถานพยาบาลของรัฐ -->
+                    <item>
+                        <linkId id="7.1"></linkId>
+                        <text value="สถานพยาบาลของรัฐ" />
+                        <!-- 6.7.1.1 จำนวน -->
+                        <item>
+                            <linkId id="7.1.1"></linkId>
+                            <text value="จำนวน" />
+                            <answer>
+                                <valueInteger value="3"/> <!-- จำนวนสถานพยาบาล หน่วยเป็นแห่ง -->
+                            </answer>
+                        </item>
+                        <!-- 6.7.1.2 ผู้ป่วยใน -->
+                        <item>
+                            <linkId id="7.1.2"></linkId>
+                            <text value="ผู้ป่วยใน" />
+                            <answer>
+                                <valueInteger value="200"/> <!-- จำนวนผู้ป่วยใน หน่วยเป็นเตียง -->
+                            </answer>
+                        </item>
+                        <!-- 6.7.1.3 ห้องผ่าตัด -->
+                        <item>
+                            <linkId id="7.1.3"></linkId>
+                            <text value="ห้องผ่าตัด" />
+                            <answer>
+                                <valueInteger value="10"/> <!-- จำนวนห้องผ่าตัด หน่วยเป็นห้อง -->
+                            </answer>
+                        </item>
+                        <!-- 6.7.1.4 เครื่องเอ็กซ์เรย์คอมพิวเตอร์ -->
+                        <item>
+                            <linkId id="7.1.4"></linkId>
+                            <text value="เครื่องเอ็กซ์เรย์คอมพิวเตอร์" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนเครื่องเอ็กซ์เรย์คอมพิวเตอร์ หน่วยเป็นเครื่อง -->
+                            </answer>              
+                        </item>
+                        <!-- 6.7.1.5 เครื่องตรวจอวัยวะภายในชนิดสนามแม่เหล็กไฟฟ้า -->
+                        <item>
+                            <linkId id="7.1.5"></linkId>
+                            <text value="เครื่องตรวจอวัยวะภายในชนิดสนามแม่เหล็กไฟฟ้า" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนเครื่องตรวจอวัยวะภายในชนิดสนามแม่เหล็กไฟฟ้า หน่วยเป็นเครื่อง -->
+                            </answer>              
+                        </item>
+                        <!-- 6.7.1.6 เครื่องสลายนิ่ว -->
+                        <item>
+                            <linkId id="7.1.6"></linkId>
+                            <text value="เครื่องสลายนิ่ว" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนเครื่องสลายนิ่ว หน่วยเป็นเครื่อง -->
+                            </answer>              
+                        </item>
+                        <!-- 6.7.1.7 เครื่องล้างไต -->
+                        <item>
+                            <linkId id="7.1.7"></linkId>
+                            <text value="เครื่องล้างไต" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนเครื่องล้างไต หน่วยเป็นเครื่อง -->
+                            </answer>              
+                        </item>
+                        <!-- 6.7.1.8 อื่น ๆ -->
+                        <item>
+                            <linkId id="7.1.8"></linkId>
+                            <text value="อื่น ๆ" />
+                            <answer>
+                                <valueString value="ระบุข้อมูลเพิ่มเติม"/> 
+                            </answer>              
+                        </item>
+                    </item>
+                    <!-- 6.7.2 สถานพยาบาลของเอกชน -->
+                    <item>
+                        <linkId id="7.2"></linkId>
+                        <text value="สถานพยาบาลของเอกชน" />
+                        <!-- 6.7.2.1 จำนวน -->
+                        <item>
+                            <linkId id="7.2.1"></linkId>
+                            <text value="จำนวน" />
+                            <answer>
+                                <valueInteger value="3"/> <!-- จำนวนสถานพยาบาล หน่วยเป็นแห่ง -->
+                            </answer>
+                        </item>
+                        <!-- 6.7.2.2 ผู้ป่วยใน -->
+                        <item>
+                            <linkId id="7.2.2"></linkId>
+                            <text value="ผู้ป่วยใน" />
+                            <answer>
+                                <valueInteger value="200"/> <!-- จำนวนผู้ป่วยใน หน่วยเป็นเตียง -->
+                            </answer>
+                        </item>
+                        <!-- 6.7.2.3 ห้องผ่าตัด -->
+                        <item>
+                            <linkId id="7.2.3"></linkId>
+                            <text value="ห้องผ่าตัด" />
+                            <answer>
+                                <valueInteger value="10"/> <!-- จำนวนห้องผ่าตัด หน่วยเป็นห้อง -->
+                            </answer>
+                        </item>
+                        <!-- 6.7.2.4 เครื่องเอ็กซ์เรย์คอมพิวเตอร์ -->
+                        <item>
+                            <linkId id="7.2.4"></linkId>
+                            <text value="เครื่องเอ็กซ์เรย์คอมพิวเตอร์" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนเครื่องเอ็กซ์เรย์คอมพิวเตอร์ หน่วยเป็นเครื่อง -->
+                            </answer>              
+                        </item>
+                        <!-- 6.7.2.5 เครื่องตรวจอวัยวะภายในชนิดสนามแม่เหล็กไฟฟ้า -->
+                        <item>
+                            <linkId id="7.2.5"></linkId>
+                            <text value="เครื่องตรวจอวัยวะภายในชนิดสนามแม่เหล็กไฟฟ้า" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนเครื่องตรวจอวัยวะภายในชนิดสนามแม่เหล็กไฟฟ้า หน่วยเป็นเครื่อง -->
+                            </answer>              
+                        </item>
+                        <!-- 6.7.2.6 เครื่องสลายนิ่ว -->
+                        <item>
+                            <linkId id="7.2.6"></linkId>
+                            <text value="เครื่องสลายนิ่ว" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนเครื่องสลายนิ่ว หน่วยเป็นเครื่อง -->
+                            </answer>              
+                        </item>
+                        <!-- 6.7.2.7 เครื่องล้างไต -->
+                        <item>
+                            <linkId id="7.2.7"></linkId>
+                            <text value="เครื่องล้างไต" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนเครื่องล้างไต หน่วยเป็นเครื่อง -->
+                            </answer>              
+                        </item>
+                        <!-- 6.7.2.8 อื่น ๆ -->
+                        <item>
+                            <linkId id="7.2.8"></linkId>
+                            <text value="อื่น ๆ" />
+                            <answer>
+                                <valueString value="ระบุข้อมูลเพิ่มเติม"/> 
+                            </answer>              
+                        </item>
+                    </item>
+                </item>
+                <!-- 6.8 ปัญหาการบริการรักษาพยาบาลในพื้นที่ที่ครอบคลุม ซึ่งเป็นเหตุให้สมควรลงทุน -->
+                <item>
+                    <linkId id="8"></linkId>
+                    <text value="ปัญหาการบริการรักษาพยาบาลในพื้นที่ที่ครอบคลุม ซึ่งเป็นเหตุให้สมควรลงทุน" />
+                    <answer>
+                        <valueString value="ข้อความอธิบาย"/>
+                    </answer>
+                </item>
+                <!-- 6.9 จำนวนของผู้ประกอบวิชาชีพที่จะมาปฏิบัติงาน -->
+                <item>
+                    <linkId id="9"></linkId>
+                    <text value="จำนวนของผู้ประกอบวิชาชีพที่จะมาปฏิบัติงาน" />
+                    <!-- 6.9.1 แพทย์ -->
+                    <item>
+                        <linkId id="9.1"></linkId>
+                        <text value="แพทย์" />
+                        <answer>
+                            <valueInteger value="5"/> <!-- จำนวนแพทย์ หน่วยเป็นคน -->
+                        </answer>
+                    </item>
+                    <!-- 6.9.2 พยาบาล -->
+                    <item>
+                        <linkId id="9.2"></linkId>
+                        <text value="พยาบาล" />
+                        <answer>
+                            <valueInteger value="5"/> <!-- จำนวนพยาบาล หน่วยเป็นคน -->
+                        </answer>
+                    </item>
+                    <!-- 6.9.3 ทันตแพทย์ -->
+                    <item>
+                        <linkId id="9.3"></linkId>
+                        <text value="ทันตแพทย์" />
+                        <answer>
+                            <valueInteger value="5"/> <!-- จำนวนทันตแพทย์ หน่วยเป็นคน -->
+                        </answer>
+                    </item>
+                    <!-- 6.9.4 เภสัขกร -->
+                    <item>
+                        <linkId id="9.4"></linkId>
+                        <text value="เภสัขกร" />
+                        <answer>
+                            <valueInteger value="5"/> <!-- จำนวนเภสัขกร หน่วยเป็นคน -->
+                        </answer>
+                    </item>
+                    <!-- 6.9.5 นักกายภาพบำบัด -->
+                    <item>
+                        <linkId id="9.5"></linkId>
+                        <text value="นักกายภาพบำบัด" />
+                        <answer>
+                            <valueInteger value="5"/> <!-- จำนวนนักกายภาพบำบัด หน่วยเป็นคน -->
+                        </answer>
+                    </item>
+                    <!-- 6.9.6 นักเทคนิคการแพทย์ -->
+                    <item>
+                        <linkId id="9.6"></linkId>
+                        <text value="นักเทคนิคการแพทย์" />
+                        <answer>
+                            <valueInteger value="5"/> <!-- จำนวนนักเทคนิคการแพทย์ หน่วยเป็นคน -->
+                        </answer>
+                    </item>
+                    <!-- 6.9.7 แพทย์แผนไทย -->
+                    <item>
+                        <linkId id="9.7"></linkId>
+                        <text value="แพทย์แผนไทย" />
+                        <answer>
+                            <valueInteger value="5"/> <!-- จำนวนแพทย์แผนไทย หน่วยเป็นคน -->
+                        </answer>
+                        <!-- 6.9.7.1 เวชกรรมไทย -->
+                        <item>
+                            <linkId id="9.7.1"></linkId>
+                            <text value="เวชกรรมไทย" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนเวชกรรมไทย หน่วยเป็นคน -->
+                            </answer>    
+                        </item>
+                        <!-- 6.9.7.2 เภสัชกรรมไทย -->
+                        <item>
+                            <linkId id="9.7.2"></linkId>
+                            <text value="เภสัชกรรมไทย" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนเภสัชกรรมไทย หน่วยเป็นคน -->
+                            </answer>    
+                        </item>
+                        <!-- 6.9.7.3 แพทย์แผนไทยประยุกต์ -->
+                        <item>
+                            <linkId id="9.7.3"></linkId>
+                            <text value="แพทย์แผนไทยประยุกต์" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนแพทย์แผนไทยประยุกต์ หน่วยเป็นคน -->
+                            </answer>    
+                        </item>
+                        <!-- 6.9.7.4 การผดุงครรภ์ไทย -->
+                        <item>
+                            <linkId id="9.7.4"></linkId>
+                            <text value="การผดุงครรภ์ไทย" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนการผดุงครรภ์ไทย หน่วยเป็นคน -->
+                            </answer>    
+                        </item>
+                        <!-- 6.9.7.5 การนวดไทย -->
+                        <item>
+                            <linkId id="9.7.5"></linkId>
+                            <text value="การนวดไทย" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนการนวดไทย หน่วยเป็นคน -->
+                            </answer>    
+                        </item>
+                        <!-- 6.9.7.6 การแพทย์พื้นบ้านไทย -->
+                        <item>
+                            <linkId id="9.7.6"></linkId>
+                            <text value="การแพทย์พื้นบ้านไทย" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนการแพทย์พื้นบ้านไทย หน่วยเป็นคน -->
+                            </answer>    
+                        </item>
+                    </item>
+                    <!-- 6.9.8 ผู้ประกอบโรคศิลปะ -->
+                    <item>
+                        <linkId id="9.8"></linkId>
+                        <text value="ผู้ประกอบโรคศิลปะ" />
+                        <answer>
+                            <valueInteger value="5"/> <!-- จำนวนผู้ประกอบโรคศิลปะ หน่วยเป็นคน -->
+                        </answer>
+                        <!-- 6.9.8.1 กิจกรรมบำบัด -->
+                        <item>
+                            <linkId id="9.8.1"></linkId>
+                            <text value="กิจกรรมบำบัด" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนกิจกรรมบำบัด หน่วยเป็นคน -->
+                            </answer>    
+                        </item>
+                        <!-- 6.9.8.2 การแก้ไขความผิดปกติของการสื่อความหมาย -->
+                        <item>
+                            <linkId id="9.8.2"></linkId>
+                            <text value="การแก้ไขความผิดปกติของการสื่อความหมาย" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนการแก้ไขความผิดปกติของการสื่อความหมาย หน่วยเป็นคน -->
+                            </answer>    
+                        </item>
+                        <!-- 6.9.8.3 เทคโนโลยีหัวใจและทรวงอก -->
+                        <item>
+                            <linkId id="9.8.3"></linkId>
+                            <text value="เทคโนโลยีหัวใจและทรวงอก" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนเทคโนโลยีหัวใจและทรวงอก หน่วยเป็นคน -->
+                            </answer>    
+                        </item>
+                        <!-- 6.9.8.4 รังสีเทคนิค -->
+                        <item>
+                            <linkId id="9.8.4"></linkId>
+                            <text value="รังสีเทคนิค" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนรังสีเทคนิค หน่วยเป็นคน -->
+                            </answer>    
+                        </item>
+                        <!-- 6.9.8.5 จิตวิทยาคลินิกอก -->
+                        <item>
+                            <linkId id="9.8.5"></linkId>
+                            <text value="จิตวิทยาคลินิกอก" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนจิตวิทยาคลินิกอก หน่วยเป็นคน -->
+                            </answer>    
+                        </item>
+                        <!-- 6.9.8.6 กายอุปกรณ์ -->
+                        <item>
+                            <linkId id="9.8.6"></linkId>
+                            <text value="กายอุปกรณ์" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนกายอุปกรณ์ หน่วยเป็นคน -->
+                            </answer>    
+                        </item>
+                        <!-- 6.9.8.7 การแพทย์แผนจีน -->
+                        <item>
+                            <linkId id="9.8.7"></linkId>
+                            <text value="การแพทย์แผนจีน" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนการแพทย์แผนจีน หน่วยเป็นคน -->
+                            </answer>    
+                        </item>
+                        <!-- 6.9.8.8 อื่น ๆ -->
+                        <item>
+                            <linkId id="9.8.8"></linkId>
+                            <text value="อื่น ๆ" />
+                            <answer>
+                                <valueInteger value="5"/> <!-- จำนวนอื่น ๆ หน่วยเป็นคน -->
+                            </answer>    
+                        </item>
+                    </item>
+                </item>
+                <!-- 6.10 ผู้ประกอบวิชาชีพที่จะมาปฏิบัติงานในตำแหน่งที่สำคัญ -->
+                <item>
+                    <linkId id="10"></linkId>
+                    <text value="ผู้ประกอบวิชาชีพที่จะมาปฏิบัติงานในตำแหน่งที่สำคัญ" />
+                    <!-- 6.10.1 ผู้ดำเนินการสถานพยาบาล -->
+                    <item>
+                        <linkId id="10.1"></linkId>
+                        <text value="ผู้ดำเนินการสถานพยาบาล" />
+                        <answer>
+                            <valueString value="ชื่อ-นามสกุล"/>
+                        </answer>
+                    </item>
+                    <!-- 6.10.2 ผู้อำนวยการฝ่ายการแพทย์ -->
+                    <item>
+                        <linkId id="10.2"></linkId>
+                        <text value="ผู้อำนวยการฝ่ายการแพทย์" />
+                        <answer>
+                            <valueString value="ชื่อ-นามสกุล"/>
+                        </answer>
+                    </item>
+                    <!-- 6.10.3 ผู้อำนวยการฝ่ายการพยาบาล -->
+                    <item>
+                        <linkId id="10.3"></linkId>
+                        <text value="ผู้อำนวยการฝ่ายการพยาบาล" />
+                        <answer>
+                            <valueString value="ชื่อ-นามสกุล"/>
+                        </answer>
+                    </item>
+                    <!-- 6.10.4 อื่น ๆ -->
+                    <item>
+                        <linkId id="10.4"></linkId>
+                        <text value="อื่น ๆ" />
+                        <answer>
+                            <valueString value="ชื่อ-นามสกุล"/>
+                        </answer>
+                    </item>
+                </item>
+                <!-- 6.11  ระยะเวลาในการดำเนินการตามแผนงานการจัดตั้งสถานพยาบาล มีระยะเวลา ปี นับตั้งแต่วันที่ได้รับ อนุมัติแผนการจัดตั้งสถานพยาบาล -->
+                <item>
+                    <linkId id="11"></linkId>
+                    <text value="ระยะเวลาในการดำเนินการมีระยะเวลา หน่วยเป็นปี "/>
+                    <answer>
+                        <valueInteger value="3"/>
+                    </answer>
+                </item>
+            </QuestionnaireResponse>
+        </resource>
+    </entry>
+    <signature>
+        <!--7. วันที่เซ็นเอกสาร -->  
+        <when value="2020-05-05T13:28:17-05:00"/>
+        <!--ชื่อนามสกุลผู้เซ็นเอกสารให้การอนุญาต -->
+        <who>
+            <display value="ชื่อนามสกุลผู้เซ็นเอกสารให้การอนุญาต"/>
+        </who>
+        <!--ประเภทรูปแบบการเซ็นเอกสารอิเล็กทรอนิกส์ --> 
+        <sigFormat value="application/signature+xml"/>
+        <!--ข้อมูลลายเซ็น --> 
+        <data value="0000"/>
+    </signature>
+</Bundle>

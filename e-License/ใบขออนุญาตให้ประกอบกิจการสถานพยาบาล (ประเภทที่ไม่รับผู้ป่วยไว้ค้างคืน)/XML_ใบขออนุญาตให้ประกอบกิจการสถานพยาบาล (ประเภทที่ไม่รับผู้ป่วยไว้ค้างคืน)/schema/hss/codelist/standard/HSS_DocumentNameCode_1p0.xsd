@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited by Office of Standard,ETDA  -->
+<!-- ====================================================================== -->
+<!-- =====        Document Name Code - Code List Schema    ===== -->
+<!-- ====================================================================== -->
+<!--
+Schema agency:  HSS
+Schema version: 1.0
+Schema date:    May 2020
+
+Code list name:    Document Name Code
+Code list agency:   HSS
+Code list version:  1.0
+
+© Copyright HSS, 2020
+
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"     
+  targetNamespace="urn:hss:codelist:standard:DocumentNameCode:1"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0"
+  xmlns:hssDocumentName="urn:hss:codelist:standard:DocumentNameCode:1">
+  
+  <xsd:simpleType name="DocumentNameCodeContentType">
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="กบ.2">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">ใบประกอบโรคศิลป์</xsd:documentation>          
+        </xsd:annotation>		 
+      </xsd:enumeration>
+      <xsd:enumeration value="ส.พ.7">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">ใบอนุญาตให้ประกอบกิจการสถานพยาบาล</xsd:documentation>          
+        </xsd:annotation>		
+      </xsd:enumeration>
+      <xsd:enumeration value="ส.พ.8">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">สมุดทะเบียนสถานพยาบาลประเภทที่ไม่รับผู้ป่วยไว้ค้างคืน</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ส.พ.9">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">สมุดทะเบียนสถานพยาบาลประเภทที่รับผู้ป่วยไว้ค้างคืน</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ส.พ.12">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">แบบฟอร์มการชำระค่าธรรมประจำปีสำหรับการประกอบกิจการสถานพยาบาล</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ส.พ.19">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">ใบอนุญาตดำเนินการสถานพยาบาล</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>	  
+      <xsd:enumeration value="คทพ.9">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">หนังสือรับรองมาตรฐานในการให้บริการด้านเทคโนโลยีช่วยเจริญพันธ์ทางการแพทย์</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="HSS-Doc-001">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">สำเนาใบอนุญาตประกอบกิจการ</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="HSS-Doc-002">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">รายการบันทึกการต่ออายุใบอนุญาตให้ประกอบกิจการสถานพยาบาล</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="HSS-Doc-003">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">รายการการชำระค่าธรรมะเนียมรายปี/การต่ออายุใบอนุญาตให้ดำเนินการสถานพยาบาล</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="HSS-Doc-004">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">รายชื่อและการเปลี่ยนแปลผู้ประกอบวิชาชีพ / ผู้ประกอบโรคศิลปะที่ปฏิบัติงานประจำสถานพยาบาล</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="HSS-Doc-005">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">รายการแก้ไขเปลี่ยนแปลงการประกอบกิจการและดำเนินการสถาพยาบาล</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="HSS-Doc-006">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">บันทึกการตรวจสถานพยาบาลและการดำเนินการตามกฏหมาย</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="สส.11/2">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">ใบอนุมัติแผนงานการจัดตั้งสถานพยาบาลสัตว์</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="สส.4">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">ใบอนุญาตให้ดำเนินการสถานพยาบาลสัตว์</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="สส.3">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">ใบอนุญาตตั้งสถานพยาบาลสัตว์</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ส.พ.4">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">ใบขออนุมัติแผนงานจัดตั้งสถานพยาบาล (ประเภทที่รับผู้ป่วยไว้ค้างคืน)</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ส.พ.2">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">ใบขออนุมัติแผนงานจัดตั้งสถานพยาบาล (ประเภทที่รับผู้ป่วยไว้ค้างคืน)</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

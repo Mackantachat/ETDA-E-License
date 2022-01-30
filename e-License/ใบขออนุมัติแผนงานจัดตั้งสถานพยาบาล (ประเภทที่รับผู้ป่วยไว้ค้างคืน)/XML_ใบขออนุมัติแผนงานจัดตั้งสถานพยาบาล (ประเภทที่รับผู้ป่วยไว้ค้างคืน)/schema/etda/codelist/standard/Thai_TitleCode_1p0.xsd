@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited by Office of Standard,ETDA  -->
+<!-- ====================================================================== -->
+<!-- =====        Title Code - Code List Schema    ===== -->
+<!-- ====================================================================== -->
+<!--
+Schema agency:  ETDA
+Schema version: 2.0
+Schema date:    May 2020
+
+Code list name:    Title Code
+Code list agency:   ETDA
+Code list version:  1.0
+
+© Copyright ETDA, 2020
+
+-->
+  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2"
+    targetNamespace="urn:etda:uncefact:codelist:standard:ThaiTitleCode:1"
+    elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0"
+    xmlns:thCountrySubDivision="urn:etda:uncefact:codelist:standard:ThaiTitleCode:1">
+  
+  <xsd:simpleType name="ThaiTitleCodeContentType">
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="01">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">นาย</xsd:documentation>
+          <xsd:documentation xml:lang="en">Mr.</xsd:documentation>
+        </xsd:annotation>		 
+      </xsd:enumeration>
+      <xsd:enumeration value="02">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">นาง</xsd:documentation>
+          <xsd:documentation xml:lang="en">Mrs.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="03">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">นางสาว</xsd:documentation>
+          <xsd:documentation xml:lang="en">Miss</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

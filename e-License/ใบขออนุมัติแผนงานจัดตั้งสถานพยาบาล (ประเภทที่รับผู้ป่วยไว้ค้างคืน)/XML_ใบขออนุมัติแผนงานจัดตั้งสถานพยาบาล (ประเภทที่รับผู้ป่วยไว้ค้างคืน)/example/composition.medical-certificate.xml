@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fhir:Bundle xmlns:xhtml="http://www.w3.org/1999/xhtml"
+ xmlns:fhir="http://hl7.org/fhir"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://hl7.org/fhir file:../schema/fhir/bundle.xsd">
+    <!--1 กำหนดภาษาที่ใช้ของเอกสารอิเล็กทรอนิกส์-->
+    <fhir:language value="TH"/>   
+    <!--2.กำหนดประเภทเอกสาร-->
+    <fhir:type value="document"/>
+   
+    <fhir:entry>
+       <fhir:resource>
+          <fhir:Composition>
+             
+             <!--Medical Certificate For Alien Worker-->
+             <!--3.1.1 OID Number-->
+             <fhir:extension url="https://oid.estandard.or.th">                
+                <fhir:valueOid id="2.16.764.1.4.100.9.2.1.1"/>             
+             </fhir:extension>
+             <!--3.1.2 Schema Version Number  -->
+             <!--http://hl7.org/fhir/extension-composition-clinicaldocument-versionnumber.html-->
+             <fhir:extension url="VersionNumber">             
+                <fhir:valueString value="1.0.0"/>
+             </fhir:extension>             
+             
+             <!--ข้อมูลผู้ขอใบรับรองแพทย์-->
+             <fhir:subject>                
+                <!--3.2.1.1 สถานที่เกิด-->    
+                <fhir:extension url="http://hl7.org/fhir/StructureDefinition/patient-birthPlace">                                      
+                   <fhir:valueAddress>
+                      <!--3.2.1.1.1.1 เมืองที่เกิด (Text 200 Max)-->
+                      <fhir:text value="เมืองที่เกิด"/>
+                      <!--3.2.1.1.1.2 ประเทศ-->
+                      <fhir:country value="TH"/>
+                   </fhir:valueAddress>
+                </fhir:extension>
+                
+                <!--3.2.1.2 สัญชาติ-->        
+                <fhir:extension url="http://hl7.org/fhir/StructureDefinition/patient-nationality">
+                   <fhir:extension url="code">
+                      <fhir:valueCodeableConcept>                         
+                         <fhir:coding nationalityvalue="003"/>
+                      </fhir:valueCodeableConcept>                
+                   </fhir:extension>
+                </fhir:extension>
+                <!--อาชีพ-->
+                <fhir:extension url="Occupation">
+                   <fhir:extension url="code">
+                      <fhir:valueCodeableConcept>                         
+                         <fhir:coding occupationvalue="0210"/><!--ทหารชั้นประทวน-->
+                      </fhir:valueCodeableConcept>                
+                   </fhir:extension>
+                </fhir:extension> 
+                               
+                <!--3.2.1.2 เลขบัตรประชาชน-->
+                <fhir:identifier id="Text"/> 
+                <!--3.2.1.2 Passport-->
+                <fhir:identifier id="Text"/> 
+                
+                <!--3.2.1.3 ชื่อ-นามสกุล-ผู้ขอใบรับรองแพทย์ ภาษาไทย (Text 200 Max) -->                
+                <fhir:name> 
+                   <fhir:extension url="http://hl7.org/fhir/StructureDefinition/language">                       
+                      <fhir:valueCode languagevalue="th"/>
+                   </fhir:extension>
+                   <fhir:text value="Text"/>
+                   <fhir:prefix titlevalue="01"/><!--01:นาย-->
+                </fhir:name>
+                <!--3.2.1.3 ชื่อ-นามสกุล-ผู้ขอใบรับรองแพทย์ อังกฤษ (Text 200 Max) --> 
+                <fhir:name>
+                   <fhir:extension url="http://hl7.org/fhir/StructureDefinition/language">                       
+                      <fhir:valueCode languagevalue="en"/>
+                   </fhir:extension>
+                   <fhir:text value="Text"/>
+                   <fhir:prefix titlevalue="01"/><!--01:Mr.-->            
+                </fhir:name>
+                
+                <!--3.2.1.4 วัน-เดือน-ปี เกิด-->
+                <fhir:birthDate value="2020-01-01"/>    
+                                
+                <!--3.2.1.6 ที่อยู่-ผู้ขอใบรับรองแพทย์ (Text 500 Max)-->
+                <fhir:address>
+                   <!--กรณีที่อยู่แบบ Unstructure-->
+                   <fhir:text value="Text"/>
+                   <!--เลขที่-->                   
+                   <fhir:line value="Text"/>   
+                   <!--ตำบล-->
+                   <fhir:city value="100201"/><!--100201:ดุสิต-->
+                   <!-- อำเภอ-->
+                   <fhir:district value="1002"/> <!--1001:เขตดุสิต-->
+                   <!--จังหวัด-->
+                   <fhir:state value="10"/>  <!--10:กรุงเทพ-->   
+                   <!--รหัสไปรษณีย์-->                   
+                   <fhir:postalCode value="Text"/> 
+                   <!--ประเทศ-->
+                   <fhir:country value="TH"/>
+                </fhir:address> 
+                
+                <fhir:contact>
+                   <!--3.2.1.7 เบอร์โทร-->
+                   <fhir:telecom>
+                      <fhir:system value="phone"/>
+                      <fhir:value value="(03) 5555 6473"/>
+                      <fhir:use value="home"/>                      
+                   </fhir:telecom>
+                   <!--เบอร์โทรมือถือ-->
+                   <fhir:telecom>
+                      <fhir:system value="phone"/>
+                      <fhir:value value="(03) 5555 5613"/>
+                      <fhir:use value="mobile"/>                     
+                   </fhir:telecom> 
+                   
+                   <fhir:organization>
+                      <!--3.2.1.7.2.1 ชื่อหน่วยงาน/สถานประกอบการ-->
+                      <fhir:name value="Text"/>
+                      <!--3.2.1.7.2.2 เบอร์โทร-->
+                      <fhir:telecom>
+                         <fhir:system value="phone"/>
+                         <fhir:value value="(03) 5555 6473"/>
+                         <fhir:use value="home"/>                      
+                      </fhir:telecom>
+                      <!--เบอร์มือถือ-->
+                      <fhir:telecom>
+                         <fhir:system value="phone"/>
+                         <fhir:value value="(03) 5555 6473"/>
+                         <fhir:use value="mobile"/>                      
+                      </fhir:telecom> 
+                      <!--3.2.1.7.2.3 ที่ตั้งหน่วยงาน/สถานประกอบการ-->
+                      <fhir:address>
+                         <!--กรณีที่อยู่แบบ Unstructure-->
+                         <fhir:text value="Text"/>
+                         <!--เลขที่-->                   
+                         <fhir:line value="Text"/>   
+                         <!--ตำบล-->
+                         <fhir:city value="100201"/><!--100201:ดุสิต-->
+                         <!--อำเภอ-->
+                         <fhir:district value="1002"/> <!--1001:เขตดุสิต-->
+                         <!--จังหวัด-->
+                         <fhir:state value="10"/>  <!--10:กรุงเทพ-->   
+                         <!--รหัสไปรษณีย์-->                   
+                         <fhir:postalCode value="Text"/> 
+                         <!--ประเทศ-->
+                         <fhir:country value="TH"/>
+                      </fhir:address>
+                      <!--3.2.1.7.2.4 ชื่อ-นามสกุลนายจ้าง-->
+                      <fhir:contact>
+                         <fhir:name>
+                            <fhir:text value="Text"/>
+                         </fhir:name>                      
+                      </fhir:contact>
+                   </fhir:organization>
+                </fhir:contact>           
+             </fhir:subject>
+             
+             <!--3.3 ข้อมูลสถานที่ตรวจ-->
+             <fhir:encounter>
+                <!--3.3.1 การวินิจฉัยโรค-->        
+               <fhir:diagnosis>
+                  <fhir:condition>
+                      <fhir:stage>
+                         <!--3.3.1.1.1.1 สรุปผลการตรวจ-->
+                         <fhir:summary id="1">
+                            <fhir:text value="ระบุ"/>                            
+                         </fhir:summary>
+                         
+                         <fhir:assessment>  
+                            <!--ส่วนสูง-->
+                            <fhir:code>
+                               <fhir:coding>
+                                  <fhir:system value="http://loinc.org"/>
+                                  <fhir:code value="8302-2"/> 
+                                  <fhir:display value="Body height"/>
+                               </fhir:coding>
+                            </fhir:code> 
+                            <fhir:valueQuantity> 
+                               <fhir:value value="66.899999999999991"/> 
+                               <fhir:unit value="in"/> 
+                               <fhir:system value="http://unitsofmeasure.org"/> 
+                               <fhir:code value="[in_i]"/> 
+                            </fhir:valueQuantity> 
+                         </fhir:assessment>
+                         
+                         <fhir:assessment>  
+                            <!--น้ำหนัก--> 
+                            <fhir:code>
+                               <fhir:coding>
+                                  <fhir:system value="http://loinc.org"/>
+                                  <fhir:code value="3141-9"/> 
+                                  <fhir:display value="Body weight Measured"/>
+                               </fhir:coding>
+                               <fhir:text value="Body Weight"/> 
+                            </fhir:code> 
+                            <fhir:effectiveDateTime value="2016-05-18"/> 
+                            <fhir:valueQuantity> 
+                               <fhir:value value="185"/> 
+                               <fhir:unit value="lbs"/> 
+                               <fhir:system value="http://unitsofmeasure.org"/> 
+                               <fhir:code value="[lb_av]"/> 
+                            </fhir:valueQuantity>                  
+                         </fhir:assessment>                         
+                         <!--สีผิว-->
+                         <fhir:assessment>                            
+                            <fhir:code> 
+                               <fhir:text value="skin color"/> 
+                            </fhir:code> 
+                            <fhir:valueString value="black"/> 
+                         </fhir:assessment>
+                         <!--ความดันโลหิต ผู้ขอรับใบรับรองแพทย์-->
+                         <fhir:assessment>
+                            <fhir:code>
+                               <fhir:coding>
+                                  <fhir:system value="http://loinc.org"/>
+                                  <fhir:code value="8462-4"/> 
+                                  <fhir:display value="Diastolic blood pressure"/>
+                               </fhir:coding>
+                               <fhir:text value="Diastolic Blood Pressure"/> 
+                            </fhir:code> 
+                            <fhir:valueQuantity> 
+                               <fhir:value value="60"/> 
+                               <fhir:unit value="mmHg"/> 
+                               <fhir:system value="http://unitsofmeasure.org"/> 
+                               <fhir:code value="mm[Hg]"/> 
+                            </fhir:valueQuantity>
+                            <fhir:interpretation> 
+                               <fhir:coding> 
+                                  <fhir:system value="http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"/> 
+                                  <fhir:code value="N"/> 
+                                  <fhir:display value="normal"/> 
+                               </fhir:coding> 
+                               <fhir:text value="Normal"/> 
+                            </fhir:interpretation>
+                         </fhir:assessment>
+                         <!--ชีพจร ผู้ขอรับใบรับรองแพทย์-->
+                         <fhir:assessment>
+                            <fhir:code>
+                               <fhir:coding>
+                                  <fhir:system value="http://loinc.org"/>
+                                  <fhir:code value="8867-4"/> 
+                                  <fhir:display value="Heart rate"/>
+                               </fhir:coding>
+                               <fhir:text value="Heart rate"/> 
+                            </fhir:code> 
+                            <fhir:valueQuantity> 
+                               <fhir:value value="44"/> 
+                               <fhir:unit value="beats/minute"/> 
+                               <fhir:system value="http://unitsofmeasure.org"/> 
+                               <fhir:code value="/min"/> 
+                            </fhir:valueQuantity>    
+                         </fhir:assessment>
+                         <!--สภาพร่างกาย จิตใจทั่วไป-->
+                         <fhir:assessment>
+                            <!--สภาพร่างกาย จิตใจทั่วไป-->               
+                            <fhir:code> 
+                               <fhir:text value="สภาพร่างกาย จิตใจทั่วไป"/> 
+                            </fhir:code> 
+                            <fhir:valueString value="normal"/>                                               
+                         </fhir:assessment>
+                         <!--3.3.1.1.1.2.4 แบบสอบถาม-->
+                         <fhir:assessment>
+                            <fhir:hasMember>
+                               <fhir:status value="completed"></fhir:status>                               
+                               <fhir:item>  
+                                  <fhir:linkId id="1"></fhir:linkId>
+                                  <fhir:text value="ผลการตรวจวัณโรค ปกติหรือไม่"></fhir:text>
+                                  <fhir:answer>
+                                     <fhir:valueInteger value="1"/> <!--1 ปกติ, 2 ผิดปกติ/ให้รักษา, 3 อันตราย-->
+                                  </fhir:answer>
+                                  <fhir:answer>
+                                     <fhir:valueString value="ผลการตรวจอื่น ๆ (ถ้ามี)"/>
+                                  </fhir:answer>
+                               </fhir:item>
+                               <fhir:item>  
+                                  <fhir:linkId id="2"></fhir:linkId>
+                                  <fhir:text value="ผลการตรวจโรคเรื้อน ปกติหรือไม่"></fhir:text>
+                                  <fhir:answer>
+                                     <fhir:valueInteger value="4"/> <!--1 ปกติ, 2 ผิดปกติ/ให้รักษา, 4 ระยะติดต่อ/อาการเป็นที่รังเกียจ-->
+                                  </fhir:answer>
+                                  <fhir:answer>
+                                     <fhir:valueString value="ผลการตรวจอื่น ๆ (ถ้ามี)"/>
+                                  </fhir:answer>
+                               </fhir:item>
+                               <fhir:item>  
+                                  <fhir:linkId id="3"></fhir:linkId>
+                                  <fhir:text value="ผลการตรวจโรคเท้าช้าง ปกติหรือไม่"></fhir:text>
+                                  <fhir:answer>
+                                     <fhir:valueInteger value="5"/> <!--1 ปกติ, 2 ผิดปกติ/ให้รักษา, 5 อาการเป็นที่รังเกียจ-->
+                                  </fhir:answer>
+                                  <fhir:answer>
+                                     <fhir:valueString value="ผลการตรวจอื่น ๆ (ถ้ามี)"/>
+                                  </fhir:answer>
+                               </fhir:item>
+                               <fhir:item>  
+                                  <fhir:linkId id="4"></fhir:linkId>
+                                  <fhir:text value="ผลการตรวจโรคซิฟิลิส ปกติหรือไม่"></fhir:text>
+                                  <fhir:answer>
+                                     <fhir:valueInteger value="6"/> <!--1 ปกติ, 2 ผิดปกติ/ให้รักษา, 6 ระยะที่ 3-->
+                                  </fhir:answer>
+                                  <fhir:answer>
+                                     <fhir:valueString value="ผลการตรวจอื่น ๆ (ถ้ามี)"/>
+                                  </fhir:answer>
+                               </fhir:item>
+                               <fhir:item>  
+                                  <fhir:linkId id="5"></fhir:linkId>
+                                  <fhir:text value="ผลการตรวจสารเสพติด ปกติหรือไม่"></fhir:text>
+                                  <fhir:answer>
+                                     <fhir:valueInteger value="7"/> <!--1 ปกติ, 2 ผิดปกติ/ให้รักษา, 7.ให้ตรวจยืนยัน-->
+                                  </fhir:answer>
+                                  <fhir:answer>
+                                     <fhir:valueString value="ผลการตรวจอื่น ๆ (ถ้ามี)"/>
+                                  </fhir:answer>
+                               </fhir:item>
+                               <fhir:item>  
+                                  <fhir:linkId id="5"></fhir:linkId>
+                                  <fhir:text value="ผลการตรวจอาการของโรคพิษสุราเรื้อรัง ปกติหรือไม่"></fhir:text>
+                                  <fhir:answer>
+                                     <fhir:valueInteger value="8"/> <!--1 ปกติ,8.พบสารเสพติด-->
+                                  </fhir:answer>
+                                  <fhir:answer>
+                                     <fhir:valueString value="ผลการตรวจอื่น ๆ (ถ้ามี)"/>
+                                  </fhir:answer>
+                               </fhir:item>
+                               <fhir:item>  
+                                  <fhir:linkId id="5"></fhir:linkId>
+                                  <fhir:text value="ผลการตรวจการตั้งครรภ์ ปกติหรือไม่"></fhir:text>
+                                  <fhir:answer>
+                                     <fhir:valueInteger value="9"/> <!--9 ไม่ตั้งครรภ์,10 ตั้งครรภ์-->
+                                  </fhir:answer>
+                                  <fhir:answer>
+                                     <fhir:valueString value="ผลการตรวจอื่น ๆ (ถ้ามี)"/>
+                                  </fhir:answer>
+                               </fhir:item>
+                            </fhir:hasMember>
+                         </fhir:assessment>
+                         <fhir:assessment>
+                            <fhir:subject>
+                               <fhir:display value="อาการแสดงของโรค อื่นๆ นอกจากที่ระบุ"></fhir:display>                      
+                            </fhir:subject>
+                            <fhir:valueString value="ระบุ"/>
+                         </fhir:assessment>
+                      </fhir:stage>
+                  </fhir:condition>
+               </fhir:diagnosis>
+                
+                <fhir:location>
+                   <fhir:location>                 
+                      <!--3.3.2.1 สถานที่ตรวจ (Text 200 Max)-->
+                      <fhir:name value="Text"/>
+                      <!--3.3.2.2 ที่ตั้งสถานพยาบาลชื่อ  ผู้ออกใบรับรองแพทย์-->
+                      <fhir:address> 
+                         <!--กรณีที่อยู่-สถานที่ตรวจ Unstructure-->
+                         <fhir:text value="Text"/>
+                         <!--เลขที่-->
+                         <fhir:line value="Text"/>                   
+                         <!--ตำบล-->
+                         <fhir:city value="100201"/><!--100201:ดุสิต-->
+                         <!--อำเภอ-->
+                         <fhir:district value="1002"/><!--1001:เขตดุสิต-->
+                         <!--จังหวัด-->
+                         <fhir:state value="10"/>  <!--10:กรุงเทพ-->   
+                         <!--รหัสไปรษณีย์-->
+                         <fhir:postalCode value="Text"/> 
+                         <!--ประเทศ-->
+                         <fhir:country value="TH"/>
+                      </fhir:address>                         
+                   </fhir:location>
+                </fhir:location>
+             </fhir:encounter>
+             
+             
+             <!--3.4 วันที่ ออกใบรับรองแพทย์-->
+             <fhir:date value="2020-05-04"/>
+             
+             <!--ข้อมูลแพทย์ที่ออกใบรับรองแพทย์-->   
+             <fhir:author>
+                <!--3.5.1.1 ชื่อ-นามสกุล-แพทย์ (Text 200 Max) -->
+                <fhir:name>
+                   <fhir:text value="text"/> 
+                </fhir:name>       
+                <!--ใบรับรองวิชาชีพของแพทย์-->
+                <fhir:qualification>
+                   <!--3.5.1.2.1.1 ใบอนุญาตประกอบวิชาชีพเวชกรรมเลขที่ (Text 10 Max)-->
+                   <fhir:identifier>
+                       <fhir:value value="text"></fhir:value>
+                   </fhir:identifier>         
+                </fhir:qualification>
+             </fhir:author>
+             
+             <!--3.6 ชื่อเอกสาร : ใบรับรองแพทย์--> 
+             <fhir:title value="ใบรับรองแพทย์"/> 
+             
+             <!--3.7 ระยะเวลาของเอกสาร : ใบรับรองแพทย์--> 
+             <fhir:event>
+                <fhir:period>
+                   <fhir:start value="2020-05-16"/>
+                   <fhir:end value="2020-06-16"/>
+                </fhir:period>
+             </fhir:event>
+          </fhir:Composition>            
+       </fhir:resource>
+    </fhir:entry>
+    
+    
+   <fhir:signature>
+      <!--4. วันที่เซ็นเอกสาร -->  
+      <fhir:when value="2020-05-05T13:28:17-05:00"/>
+      <!--ประเภทรูปแบบการเซ็นเอกสารอิเล็กทรอนิกส์ --> 
+      <fhir:sigFormat value="application/signature+xml"/>
+      <!--ข้อมูลลายเซ็น --> 
+      <fhir:data value="0000"/>
+   </fhir:signature>
+</fhir:Bundle>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited by Office of Standard,ETDA  -->
+<!-- ====================================================================== -->
+<!-- =====        Nationality Code - Code List Schema    ===== -->
+<!-- ====================================================================== -->
+<!--
+Schema agency:  MOPH
+Schema version: 1.0
+Schema date:    May 2020
+
+Code list name:    Nationality Code
+Code list agency:   MOPH
+Code list version:  1.0
+
+© Copyright MOPH, 2020
+
+-->
+  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"     
+    targetNamespace="urn:moph:codelist:standard:NationalityCode:1"
+    elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0"
+    xmlns:thNationality="urn:moph:codelist:standard:NationalityCode:1">
+  
+    <xsd:simpleType name="NationalityCodeContentType">
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="002">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">โปรตุเกส</xsd:documentation>          
+        </xsd:annotation>		 
+      </xsd:enumeration>
+      <xsd:enumeration value="003">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">ดัตช์</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="004">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">เยอรมัน</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="005">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">ฝรั่งเศส</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="006">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">เดนมาร์ก</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="007">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">สวีเดน</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

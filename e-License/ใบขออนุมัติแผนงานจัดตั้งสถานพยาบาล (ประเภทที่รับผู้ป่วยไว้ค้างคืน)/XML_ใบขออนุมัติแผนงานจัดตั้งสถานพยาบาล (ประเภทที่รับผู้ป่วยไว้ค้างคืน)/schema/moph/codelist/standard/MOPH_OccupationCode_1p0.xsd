@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited by Office of Standard,ETDA  -->
+<!-- ====================================================================== -->
+<!-- =====        Occupation Code - Code List Schema    ===== -->
+<!-- ====================================================================== -->
+<!--
+Schema agency:  MOPH
+Schema version: 1.0
+Schema date:    May 2020
+
+Code list name:    Occupation Code
+Code list agency:   MOPH
+Code list version:  1.0
+
+© Copyright MOPH, 2020
+
+-->
+  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"     
+    targetNamespace="urn:moph:codelist:standard:Occupation:1"
+    elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0"
+    xmlns:thOccupation="urn:moph:codelist:standard:Occupation:1">
+  
+    <xsd:simpleType name="OccupationCodeContentType">
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="0110">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">ทหารชั้นสัญญาบัตร</xsd:documentation>          
+        </xsd:annotation>		 
+      </xsd:enumeration>
+      <xsd:enumeration value="0210">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">ทหารชั้นประทวน</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="0310">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">ทหารยศอื่นๆ</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="1111">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">ข้าราชการการเมืองและนักการเมือง</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="1112">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">ข้าราชการระดับอาวุโส : ผุ้ปฏิบัติงานเกี่ยวกับการให้คำปรึกษาด้านนโยบาย งบประมาณ และระเบียบข้อบังคับต่างๆ แก่รัฐบาล</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="1113">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="th">กำนัน</xsd:documentation>           
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>
